@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.anz</groupId>
-  <artifactId>iib10</artifactId>
-  <version>1.14-SNAPSHOT</version>
+  <artifactId>api</artifactId>
+  <version>1.4-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name />
   <url>http://maven.apache.org</url>
@@ -18,14 +18,14 @@
      <developerConnection>scm:git:https://github.com/rajinovat/IIB_REST_API.git</developerConnection>
 </scm>
 
-<!--   <distributionManagement>
+ <distributionManagement>
   <repository>
      <id>iib.repos</id>
      <name>Release</name>
      <url>http://localhost:8081/nexus/content/repositories/releases</url>
   </repository>
 </distributionManagement>
--->
+
   <build>
 		<plugins>
         <plugin>
@@ -83,15 +83,32 @@
                          </arguments>  
                     </configuration>
                     </execution>
-                    
-                            
+                                           
                 </executions>
-
-      
+	
            
         </plugin>
-        
-       
+
+  		<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>zip-resources.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>install</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+      
         <!--  <plugin>
             <artifactId>maven-scm-plugin</artifactId>
             <version>1.8.1</version>
