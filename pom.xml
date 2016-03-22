@@ -19,14 +19,14 @@
 
 
 
- <!-- <distributionManagement>
+  <distributionManagement>
   <repository>
      <id>iib.repos</id>
      <name>Release</name>
      <url>http://localhost:8081/artifactory/ext-release-local/</url>
   </repository>
 </distributionManagement>
- -->
+ 
   <build>
 		<plugins>
         <plugin>
@@ -70,7 +70,7 @@
                     </execution>
                     
                     
-		<!-- 			<execution>
+	<!-- <execution>
                     <id>script-drop</id> 
 					<phase>install</phase>
                     <goals>
@@ -79,7 +79,7 @@
                     
                                             
                     <configuration>
-                        <executable>src/scripts/build.sh</executable>
+                        <executable>src/scripts/drop.sh</executable>
                          <arguments>
                          <argument>${WORKSPACE}</argument>
                          <argument>${project.version}</argument>
@@ -87,7 +87,7 @@
                          </arguments>  
                     </configuration>
                     </execution>
-              -->                              
+          -->                  
                 </executions>
 	
            
