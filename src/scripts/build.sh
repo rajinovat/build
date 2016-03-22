@@ -11,7 +11,7 @@
 # *    IIB (API)
 # *
 # * PURPOSE
-# *    Build packaging shell executable.
+# *    Build packaging shell executables.
 # *
 # * DEVELOPED BY
 # *    AD&I DevOps Competency - Global Business Services,
@@ -31,6 +31,6 @@
 WORKSPACE=$1
 PROJNAME=$2
 
-${iibtools}/mqsicreatebar -data ../../../${WORKSPACE}/src -b test.bar -p ${PROJNAME} -o "${PROJNAME}/${PROJNAME}.msgflow"
+${iibtools}/mqsicreatebar -data ../../../${WORKSPACE}/src -b "${PROJNAME}.bar" -p ${PROJNAME} -o "${PROJNAME}/${PROJNAME}.msgflow"
 
-mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release
+#mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release
