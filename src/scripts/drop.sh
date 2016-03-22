@@ -29,5 +29,4 @@
 
 LOCAL=`find . -name "*zip" -type f| xargs ls -ltr | tail -1`
 FILE=${LOCAL##*/}
-curl -u admin:password -X PUT "http://localhost:8081/artifactory/ext-release-local/${FILE}"
--T ${LOCAL}
+curl -u admin:password -X PUT "http://localhost:8081/artifactory/ext-release-local/${FILE}" -T ${LOCAL}
