@@ -33,22 +33,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>1.4.0</version>
             <executions>
-<!-- <execution>
-                    <id>script-chmod</id>
-				<phase>install</phase>
-                    <goals>
-                        <goal>exec</goal>
-                    </goals>
-                    <configuration>
-                        <executable>chmod</executable>
-                        
-                        <commandlineArgs>${argument1} ${argument2}</commandlineArgs>
-
-                    </configuration>
-                </execution>
-      -->     
-      
-      		            
+     		            
                  <execution>
                     <id>script-chmod</id> 
 					<phase>install</phase>
@@ -108,37 +93,7 @@
 					</execution>
 				</executions>
 			</plugin>
-      
-        <!--  <plugin>
-            <artifactId>maven-scm-plugin</artifactId>
-            <version>1.8.1</version>
-            <configuration>
-                <tag>${newVersion}</tag>
-            </configuration>
-        </plugin>
-        -->
-			<!-- Use the assembly plugin to create a zip file of all our resources 
-				as detailed in zip-resources.xml. -->
-			<!-- <plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<appendAssemblyId>false</appendAssemblyId>
-					<descriptors>
-						<descriptor>zip-resources.xml</descriptor>
-					</descriptors>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			 -->
-			
+  			
 		</plugins> 
 		</build>
 </project>
