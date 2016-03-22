@@ -26,7 +26,7 @@
 # /*
 
 
-. ../resources/system.properties
+. src/resources/system.properties
 
 WORKSPACE=$1
 BARNAME=$2
