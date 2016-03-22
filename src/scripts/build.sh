@@ -26,13 +26,13 @@
 # /*
 
 
-. src/resources/system.properties
+. ../resources/system.properties
 
 WORKSPACE=$1
 BARNAME=$2
 PROJNAME=$3
 
-echo "---------->${iibtools}/mqsicreatebar -data ../${WORKSPACE}/src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
+echo "SHELL==========> date ${iibtools}/mqsicreatebar -data ../../../src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
 pwd
-${iibtools}/mqsicreatebar -data ../../${WORKSPACE}/src -b "target/${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
+${iibtools}/mqsicreatebar -data ../../../src -b "target/${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
 #mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release
