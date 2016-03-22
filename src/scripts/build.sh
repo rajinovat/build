@@ -26,11 +26,12 @@
 # /*
 
 
-# . src/resources/system.properties
+. src/resources/system.properties
 
 WORKSPACE=$1
-PROJNAME=$2
+BARNAME=$2
+PROJNAME=$3
 
-${iibtools}/mqsicreatebar -data ../../../${WORKSPACE}/src -b "${PROJNAME}.bar" -p ${PROJNAME} -o "${PROJNAME}/${PROJNAME}.msgflow"
-
+echo "---------->${iibtools}/mqsicreatebar -data ../${WORKSPACE}/src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
+${iibtools}/mqsicreatebar -data ../${WORKSPACE}/src -b "${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
 #mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release

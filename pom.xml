@@ -1,1 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.anz</groupId>
+  <artifactId>iib10</artifactId>
+  <version>1.14-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name />
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <WORKSPACE>IIB_REST_API</WORKSPACE>
+    <BARNAME>TAPI.bar</BARNAME>
+    <PROJNAME>TAPI</PROJNAME>
+  </properties>
+
+<scm>
+     <connection> scm:git:https://github.com/rajinovat/IIB_REST_API.git</connection>
+     <developerConnection>scm:git:https://github.com/rajinovat/IIB_REST_API.git</developerConnection>
+</scm>
+
+<!--   <distributionManagement>
+  <repository>
+     <id>iib.repos</id>
+     <name>Release</name>
+     <url>http://localhost:8081/nexus/content/repositories/releases</url>
+  </repository>
+</distributionManagement>
+-->
+  <build>
+		<plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <executions>
+<!-- <execution>
+                    <id>script-chmod</id>
+				<phase>install</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>chmod</executable>
+                        
+                        <commandlineArgs>${argument1} ${argument2}</commandlineArgs>
+
+                    </configuration>
+                </execution>
+      -->     
+      
+      		            
+                 <execution>
+                    <id>script-chmod</id> 
+					<phase>install</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    
+                                            
+                    <configuration>
+                        <executable>chmod</executable>
+                         <arguments>
+                         <argument>+x</argument>
+                         <argument>src/scripts/build.sh</argument>
+                         </arguments>  
+                    </configuration>
+                    </execution>
+                    
+                <execution>
+                    <id>script-build</id> 
+					<phase>install</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    
+                                            
+                    <configuration>
+                        <executable>src/scripts/build.sh</executable>
+                         <arguments>
+                         <argument>${WORKSPACE}</argument>
+                         <argument>${project.version}</argument>
+                         <argument>${PROJNAME}</argument>
+                         </arguments>  
+                    </configuration>
+                    </execution>
+                    
+                            
+                </executions>
+
+      
+           
+        </plugin>
+        
+       
+        <!--  <plugin>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>1.8.1</version>
+            <configuration>
+                <tag>${newVersion}</tag>
+            </configuration>
+        </plugin>
+        -->
+			<!-- Use the assembly plugin to create a zip file of all our resources 
+				as detailed in zip-resources.xml. -->
+			<!-- <plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>zip-resources.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			 -->
+			
+		</plugins> 
+		</build>
+</project>
+
