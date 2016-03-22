@@ -17,6 +17,10 @@
      <developerConnection>scm:git:https://github.com/rajinovat/IIB_REST_API.git</developerConnection>
 </scm>
 
+<profiles>
+<profile>
+<id>Release</id>
+
  <distributionManagement>
   <repository>
      <id>iib.repos</id>
@@ -113,5 +117,8 @@
   			
 		</plugins> 
 		</build>
+		</profile>
+		</profiles>
+		
 </project>
 
