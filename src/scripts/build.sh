@@ -28,9 +28,8 @@
 
 . src/resources/system.properties
 
-WORKSPACE=$1
-BARNAME=$2
-PROJNAME=$3
+BARNAME=$1
+PROJNAME=$2
 
 echo "SHELL==========> date ${iibtools}/mqsicreatebar -data ../../../src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
 pwd
