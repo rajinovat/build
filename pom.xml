@@ -8,7 +8,6 @@
   <url>http://maven.apache.org</url>
   
   <properties>
-    <WORKSPACE>IIB_REST_API</WORKSPACE>
     <BARNAME>TAPI.bar</BARNAME>
     <PROJNAME>TAPI</PROJNAME>
   </properties>
@@ -62,7 +61,6 @@
                     <configuration>
                         <executable>src/scripts/build.sh</executable>
                          <arguments>
-                         <argument>${WORKSPACE}</argument>
                          <argument>${project.version}</argument>
                          <argument>${PROJNAME}</argument>
                          </arguments>  
