@@ -27,6 +27,7 @@
 
 
 
-echo "---------->${iibtools}/mqsicreatebar -data ../${WORKSPACE}/src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
-${iibtools}/mqsicreatebar -data ../${WORKSPACE}/src -b "target/${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
-#mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release
+LOCAL=`find . -name "*zip" -type f| xargs ls -ltr | tail -1`
+FILE=${LOCAL##*/}
+curl -u admin:password -X PUT "http://localhost:8081/artifactory/ext-release-local/${FILE}"
+-T ${LOCAL}
