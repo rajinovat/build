@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.anz</groupId>
   <artifactId>api</artifactId>
-  <version>1.13-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name />
   <url>http://maven.apache.org</url>
