@@ -33,5 +33,5 @@ PROJNAME=$2
 
 echo "SHELL==========> date ${iibtools}/mqsicreatebar -data ../../../src -b "${BARNAME}.bar" -p ${PROJNAME} -o '${PROJNAME}/gen/${PROJNAME}.msgflow'"
 pwd
-${iibtools}/mqsicreatebar -data ../src -b "target/${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
+${iibtools}/mqsicreatebar -data ../src -b "target/${PROJNAME}-${BARNAME}.bar" -p ${PROJNAME} -o ${PROJNAME}/gen/${PROJNAME}.msgflow
 #mvn deploy versions:set -DnewVersion="${BRANCH}" -P Release
